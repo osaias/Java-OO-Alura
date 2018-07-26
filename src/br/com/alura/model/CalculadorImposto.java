@@ -10,9 +10,14 @@ public class CalculadorImposto {
 	 * pois não precisa implementar o método pagar() em cada conta
 	 */
 	public void pagar(Conta conta) {
+		try {
 		 Tributavel c = (Tributavel) conta;
 		 double valor = this.somar(c);
 		 conta.sacar(valor);
+		 
+		}catch (Exception e) {
+
+		}
 	}
 	
 	/*
