@@ -25,5 +25,9 @@ public class ContaSalario extends Conta implements Tributavel{
 		return 0.0;
 	}
 
-
+	@Override
+	public String toString() {
+		
+		return "Conta salario: " +  super.toString() + " LIMITE: R$ " + this.limite;
+	}
 }

@@ -24,6 +24,9 @@ public class ContaCorrente extends Conta implements Tributavel{
 		return 0.0;
 	}
 
-
-
+	@Override
+	public String toString() {
+		
+		return "Conta Corrente: " +  super.toString() + " LIMITE: R$ " + this.limite;
+	}
 }

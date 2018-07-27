@@ -67,5 +67,40 @@ public class Cliente {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	
+	
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (cnpj ^ (cnpj >>> 32));
+		result = prime * result + (int) (cpf ^ (cpf >>> 32));
+		result = prime * result + (int) (rg ^ (rg >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (cnpj != other.cnpj)
+			return false;
+		if (cpf != other.cpf)
+			return false;
+		if (rg != other.rg)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.nome;
+	}
 }

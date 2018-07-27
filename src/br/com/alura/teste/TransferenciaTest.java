@@ -15,18 +15,21 @@ public class TransferenciaTest {
 		Conta cc = null;
 		Conta cp = null; 
 
+		Throwable msg = null;
 		try {
 			cc = new ContaCorrente(010, 1558, c, 100);
 			cp = new ContaPoupanca(001, 1558, c, 1000);
-			cc.transferir(10, null);
+			cc.transferir(10, cp);
+			
+			System.out.println(cc.toString());
+			System.out.println(cp.toString());
 		} catch (Exception e) {
 			System.out.println(e.getMessage() + ":");
 			e.printStackTrace();
-			
+			msg = e.getCause();
 		} finally {
 
-			System.out.println("CC: " + cc.getSaldo());
-			System.out.println("CP: " + cp.getSaldo());
+			System.err.println(msg);
 
 		}
 	}
