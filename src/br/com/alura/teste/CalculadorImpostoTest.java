@@ -15,12 +15,17 @@ public class CalculadorImpostoTest {
 		Cliente c = new Cliente("Osaias", "32056910837", new Endereco("rua", 12, "",""));
 		
 		Conta cc = new ContaCorrente(001, 1558, c, 100);
+		Conta cc1 = new ContaCorrente(003, 1458, c, 300);
 		Conta cs = new ContaSalario(002, 1558, c, 10);
 		Conta cp = new ContaPoupanca(003,1558, c, 1000);
 		CalculadorImposto calc = new CalculadorImposto();
 		
 		calc.pagar(cc);
-
+		calc.pagar(cc1);
+		calc.pagar(cs);
+		//calc.pagar(cp);
+		
+		calc.exibirContas();
 	}
 
 }

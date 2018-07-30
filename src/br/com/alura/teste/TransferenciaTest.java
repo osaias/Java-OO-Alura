@@ -11,24 +11,31 @@ public class TransferenciaTest {
 
 	public static void main(String[] args) {
 
-		Cliente c = new Cliente("Osaias", "32056910837", new Endereco("rua", 12, "",""));
+		Cliente osaias = new Cliente("Osaias", "32056910837", new Endereco("rua", 12, "",""));
+		Cliente renata = new Cliente("Renata", "32055479837", new Endereco("rua", 12, "",""));
 		Conta cc = null;
 		Conta cp = null; 
 
 		Throwable msg = null;
 		try {
-			cc = new ContaCorrente(010, 1558, c, 100);
-			cp = new ContaPoupanca(001, 1558, c, 1000);
+			cc = new ContaCorrente(010, 1558, osaias, 100);
+			cp = new ContaPoupanca(001, 1558, renata, 1000);
 			cc.transferir(10, cp);
 			
-			System.out.println(cc.toString());
-			System.out.println(cp.toString());
+			System.out.println("DE:");
+			System.out.println("-------------------------------------");
+			System.out.println(cc);
+			System.out.println();
+			System.out.println("PARA:");
+			System.out.println("-------------------------------------");
+			System.out.println(cp);
 		} catch (Exception e) {
 			System.out.println(e.getMessage() + ":");
 			e.printStackTrace();
 			msg = e.getCause();
 		} finally {
 
+			if (msg != null)
 			System.err.println(msg);
 
 		}
