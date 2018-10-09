@@ -45,7 +45,7 @@ public class CalculadorImposto {
 	
 	public void exibirContas() {
 		
-		
+		contas.iterator();
 		
 		contas.sort(new numeroContaComparator());
 		
